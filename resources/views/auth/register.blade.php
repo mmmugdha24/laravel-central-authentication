@@ -7,15 +7,17 @@
         @endforeach
     @endif
 
-    @if(session('error'))
+    @if (session('error'))
         <x-form.error>{{ session('error') }}</x-form.error>
     @endif
-    
+
     <form action="{{ route('register') }}" method="post">
         @csrf
         <x-form.auth.field type="text" name="name" label="Full Name" />
 
         <x-form.auth.field type="email" name="email" label="Enter your email" />
+
+        <x-form.auth.field type="text" name="organization" label="Organization Name" />
 
         <x-form.auth.field type="password" name="password" label="Password" />
 
